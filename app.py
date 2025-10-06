@@ -43,7 +43,7 @@ cities = [
 ]
 
 st.title('T20 Cricket Score Predictor')
-
+st.subheader("Developed by Aditya Sharma")
 # Input columns
 col1, col2 = st.columns(2)
 with col1:
@@ -72,4 +72,5 @@ if st.button('Predict Score'):
     crr=current_score/overs_done
     input_df=pd.DataFrame({'batting_team':[batting_team],'bowling_team':[bowling_team],'city':[city],'current_score':[current_score],'balls_left':[balls_left],'wickets_left':[wickets_left],'crr':[crr],'last_five':[last_five]})
     result=pipe.predict(input_df)
+
     st.header(f"Predicted Score: {result[0]}")
